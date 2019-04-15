@@ -1,6 +1,7 @@
 <?php
 
 include_once "../views/layout/Header.php";
+//require_once '../business/SecurityService.php';
 require_once '../views/layout/AutoLoader.php';
 
 $attemptedLoginName = $_POST['username'];
@@ -15,7 +16,7 @@ $loggedIn = $service->authenticate();
 if ($loggedIn)
 {
     $_SESSION['kavi'] = true;
-    include "../Views/LoginPassed.php";
+    header("location: ../controllers/BrowseController.php");
 }
 else
 {

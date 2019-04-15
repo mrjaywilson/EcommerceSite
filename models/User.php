@@ -17,7 +17,7 @@ class User
     public $state;
     public $zipCode;
     public $email;
-
+    
     public function __construct($username, $password, $firstName, $lastName, $address, $city, $state, $zipCode, $email)
     {
         $this->username = $username;
