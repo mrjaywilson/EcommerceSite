@@ -1,13 +1,15 @@
 <html>
 <head>
 
+
+
 </head>
 
 <?php include('layout/_header.php'); ?>
 
 <div align="center">
     <h3>
-        LOGIN
+        GENERATE SALES REPORT
     </h3>
 </div>
 
@@ -17,29 +19,29 @@
 
 <body>
 <div align="center">
-    <form action="../controllers/LoginController.php" method="post">
+    <form action="../controllers/SalesReportController.php">
         <table>
             <tr>
                 <td>
-                    User Name
+                    Start Date
                 </td>
                 <td>
-                    <input name="username" type="text">
+                    <input name="startdate" type="date">
                 </td>
             </tr>
             <tr>
                 <td>
-                    Password
+                    End Date
                 </td>
                 <td>
-                    <input name="password" type="password">
+                    <input name="enddate" type="date">
                 </td>
             </tr>
             <tr>
                 <td>
                 </td>
-                <td align="right">
-                    <input name="login" value="Sign In" type="submit">
+                <td>
+	                <button class="btn btn-primary" name="report" type="submit">Generate report</button>
                 </td>
             </tr>
         </table>

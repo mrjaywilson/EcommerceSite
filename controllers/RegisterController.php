@@ -1,6 +1,6 @@
 <?php
 
-include_once "../views/layout/Header.php";
+include_once "../views/layout/_header.php";
 require_once '../views/layout/AutoLoader.php';
 require_once '../models/User.php';
 

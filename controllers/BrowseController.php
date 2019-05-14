@@ -2,6 +2,8 @@
 
 require_once '../business/DatabaseService.php';
 
+include '../views/layout/_menu.php';
+
 echo "<h2>Browse Products</h2>";
 
 echo "<br/>";
@@ -26,8 +28,9 @@ if (isset($_GET['page'])) {
     $products = $databaseService->getAllProducts(10,0);
 }
 
+
 if ($products) {
-    include '../views/BrowseProducts.php';
+    include '../views/_browseProducts.php';
 } else {
     echo 'No Products to display.';
 }

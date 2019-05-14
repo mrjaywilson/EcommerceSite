@@ -1,5 +1,4 @@
 <?php
-namespace models;
 
 class Product
 {
@@ -23,7 +22,7 @@ class Product
             $this->category = $category;
             $this->description = $description;
             $this->sku = $sku;
-            $this->cost->$cost;
+            $this->cost = $cost;
     }
 
     /**

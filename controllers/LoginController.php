@@ -1,22 +1,23 @@
-<?php
+<?php session_start();
 
-include_once "../views/layout/Header.php";
 //require_once '../business/SecurityService.php';
 require_once '../views/layout/AutoLoader.php';
 
 $attemptedLoginName = $_POST['username'];
 $attemptedPassword = $_POST['password'];
 
-echo "You tried to login with " . $attemptedLoginName . " and " . $attemptedPassword;
-
 $service = new SecurityService($attemptedLoginName, $attemptedPassword);
 
 $loggedIn = $service->authenticate();
 
+$db = new DatabaseService('');
+
 if ($loggedIn)
 {
-    $_SESSION['kavi'] = true;
-    header("location: ../controllers/BrowseController.php");
+    $_SESSION['KAVI'] = true;
+    $_SESSION['userid'] = $db->getUserId($attemptedLoginName);
+    
+    header("location: ../views/BrowseProducts.php");
 }
 else
 {
